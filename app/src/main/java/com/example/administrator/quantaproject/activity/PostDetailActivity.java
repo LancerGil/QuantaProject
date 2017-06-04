@@ -123,7 +123,7 @@ public class PostDetailActivity extends AppCompatActivity {
             if(pubTime.length()==15) {
                 tvPubTime.setText(pubTime.substring(0, 10) + " " + pubTime.substring(11,12) + ":" + pubTime.substring(13,15));
             }else {
-                tvPubTime.setText(pubTime.substring(0, 10) + " " + pubTime.substring(12, 13) + ":" + pubTime.substring(15,16));
+//                tvPubTime.setText(pubTime.substring(0, 10) + " " + pubTime.substring(12, 13) + ":" + pubTime.substring(15,16));
             }
 
             final TextView tvContent = (TextView) fragment_NormalPost.findViewById(R.id.tv_normalPostContent);
@@ -167,10 +167,11 @@ public class PostDetailActivity extends AppCompatActivity {
                             final Bitmap bitmap = DownloadUtil.getHttpBitmap(imageUrls.get(i));
                             pubImages.add(bitmap);
                         }
-
-                        Message msg = new Message();
-                        msg.obj = pubImages;
-                        contentPic_handler.sendMessage(msg);
+                        if(pubImages.size()!=0) {
+                            Message msg = new Message();
+                            msg.obj = pubImages;
+                            contentPic_handler.sendMessage(msg);
+                        }
                     }
                 }).start();
             }
