@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>选择城市</item>
+        <item>潮州</item>
+        <item>揭阳</item>
+        <item>汕头</item>
+        <item>汕尾</item>
+    </string-array>
+</resources>

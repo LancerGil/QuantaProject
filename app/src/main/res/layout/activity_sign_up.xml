@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.quantaproject.activity.SignUpActivity">
+
+    <include layout="@layout/title_signup"></include>
+
+    <ImageView
+        android:id="@+id/ivSelectHeadPortrait"
+        app:srcCompat="@mipmap/head_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        android:layout_marginTop="@dimen/signUp_marginTop"
+        android:background="@drawable/round_gray_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择你的头像"
+        android:textSize="@dimen/signUp_textSize_setHead"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Spinner
+            android:id="@+id/spSelectCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/signUp_marginHead"
+            android:background="@mipmap/et_city_bg"
+            android:entries="@array/cities"
+            android:paddingLeft="45dp"
+            android:textSize="@dimen/signUp_textSize_normal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
+        </Spinner>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etInputPhoneNum"
+        android:textSize="@dimen/signUp_textSize_normal"
+        android:layout_width="@dimen/signUp_ediText_width"
+        android:layout_height="@dimen/signUp_ediText_height"
+        android:paddingLeft="45dp"
+        android:hint="请输入你的手机号"
+        android:inputType="phone"
+        android:layout_marginTop="@dimen/signUp_marginCity"
+        android:background="@mipmap/et_phone_bg"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:paddingLeft="45dp"
+            android:id="@+id/etInputVerificationCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/signUp_marginCode_Phone"
+            android:background="@mipmap/et_code_bg"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:layout_marginRight="@dimen/signUp_marginCode_GetCode"
+            android:textSize="@dimen/signUp_textSize_normal" />
+
+        <TextView
+            android:id="@+id/tvGetVerificationCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击获取验证码"
+            android:textSize="@dimen/signUp_textSize_Code"
+            android:layout_marginTop="@dimen/signUp_marginGetCode_Phone"
+            android:clickable="true"/>
+
+    </LinearLayout>
+    
+    <EditText
+        android:paddingLeft="45dp"
+        android:id="@+id/etInputRealName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="请输入您的真实姓名"
+        android:textSize="@dimen/signUp_textSize_normal"
+        android:inputType="textPersonName"
+        android:layout_marginTop="@dimen/signUp_marginCode"
+        android:background="@mipmap/et_realname_bg"/>
+
+    <EditText
+        android:paddingLeft="45dp"
+        android:id="@+id/etInputStudNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/signUp_textSize_normal"
+        android:hint="请输入您的学号"
+        android:inputType="number"
+        android:layout_marginTop="@dimen/signUp_marginRealname"
+        android:background="@mipmap/et_studnum_bg"/>
+
+    <EditText
+        android:paddingLeft="45dp"
+        android:id="@+id/etInputPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/signUp_textSize_normal"
+        android:hint="请输入您的密码"
+        android:inputType="textPassword"
+        android:layout_marginTop="@dimen/signUp_marginStudNum"
+        android:background="@mipmap/et_password_bg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/signUp_marginPassword"
+            android:layout_marginRight="@dimen/signUp_marginBtnSignUp_BtnCencel"
+            android:text="注册"
+            android:textSize="@dimen/signUp_textSize_Code"
+            android:textColor="@color/signUpText"
+            android:background="@mipmap/btn_signup"/>
+
+        <Button
+            android:id="@+id/btnCancelSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/signUp_marginPassword"
+            android:text="取消"
+            android:textSize="@dimen/signUp_textSize_Code"
+            android:textColor="@color/cancelText"
+            android:background="@mipmap/btn_cancle"/>
+    </LinearLayout>
+</LinearLayout>

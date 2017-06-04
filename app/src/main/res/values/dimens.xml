@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="signUp_ediText_width">297dp</dimen>
+    <dimen name="signUp_ediText_height">36dp</dimen>
+    <dimen name="signUp_code_width">160dp</dimen>
+    <dimen name="signUp_btn_getCode_width">126dp</dimen>
+    <dimen name="signUp_textSize_normal">14sp</dimen>
+    <dimen name="signUp_textSize_Code">18sp</dimen>
+    <dimen name="signUp_textSize_setHead">11sp</dimen>
+    <dimen name="signUp_marginTop">60dp</dimen>
+    <dimen name="signUp_marginHead">25dp</dimen>
+    <dimen name="signUp_marginCity">30dp</dimen>
+    <dimen name="signUp_marginCode_Phone">30dp</dimen>
+    <dimen name="signUp_marginCode_GetCode">11dp</dimen>
+    <dimen name="signUp_marginGetCode_Phone">37dp</dimen>
+    <dimen name="signUp_marginCode">30dp</dimen>
+    <dimen name="signUp_marginRealname">30dp</dimen>
+    <dimen name="signUp_marginStudNum">30dp</dimen>
+    <dimen name="signUp_marginPassword">25dp</dimen>
+    <dimen name="signUp_paddingLeft">45dp</dimen>
+    <dimen name="signUp_textSize_et">14dp</dimen>
+    <dimen name="signUp_textSize_other">18dp</dimen>
+    <dimen name="signUp_marginBtnSignUp_BtnCencel">92dp</dimen>
+
+    <dimen name="login_marginTitle">65dp</dimen>
+    <dimen name="login_marginLOGO">15dp</dimen>
+    <dimen name="login_marginWelcome">60dp</dimen>
+    <dimen name="login_marginAccountPasswrd">30dp</dimen>
+    <dimen name="login_margin_between_btn_login">70dp</dimen>
+    <dimen name="login_marginBtn_login">25dp</dimen>
+    <dimen name="login_margin_between_btnForget">98dp</dimen>
+    <dimen name="login_textSize_nomal">14sp</dimen>
+    <dimen name="login_textSize_loginCode">18sp</dimen>
+    <dimen name="login_margin_TextToLeft">45dp</dimen>
+    <dimen name="login_ediText_width">297dp</dimen>
+    <dimen name="login_ediText_height">36dp</dimen>
+    <dimen name="login_marginForget">50dp</dimen>
+    <dimen name="login_marginThirdLogin">15dp</dimen>
+    <dimen name="login_margin_betweenQQWechat">35dp</dimen>
+    <dimen name="login_margin_betweenThirdLine">8dp</dimen>
+    <dimen name="login_textSize_third">12sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!--<dimen name=""></dimen>-->
+</resources>

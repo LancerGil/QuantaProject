@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:include="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:baselineAligned="false">
+
+    <include layout="@layout/title_login"></include>
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_marginTitle"
+        android:background="@mipmap/ic_logo" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="230dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/login_marginLOGO"
+        android:src="@mipmap/welcome_to_gaginang" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/login_marginWelcome">
+
+        <EditText
+            android:id="@+id/etPhoneNum"
+            android:layout_width="@dimen/login_ediText_width"
+            android:layout_height="@dimen/login_ediText_height"
+            android:hint= "@string/AccountHint"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/login_margin_TextToLeft"
+            android:textSize="@dimen/login_textSize_nomal"
+            android:inputType=""
+            android:textColor="@android:color/black"
+            android:background="@mipmap/et_account_bg"/>
+
+        <EditText
+            android:maxLines="1"
+            android:layout_width="@dimen/login_ediText_width"
+            android:layout_height="@dimen/login_ediText_height"
+            android:layout_marginTop="@dimen/login_marginAccountPasswrd"
+            android:inputType="textPassword"
+            android:id="@+id/etPassword"
+            android:hint="@string/PasswordHint"
+            android:paddingLeft="@dimen/login_margin_TextToLeft"
+            android:textSize="@dimen/login_textSize_nomal"
+            android:textColor="@android:color/black"
+            android:background="@mipmap/et_password_bg"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLoin_With_Password"
+            android:layout_width="104dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/btn_login"
+            android:text="登录"
+            android:textColor="@color/loginText"
+            android:textSize="@dimen/login_textSize_loginCode"
+            android:layout_marginTop="@dimen/login_marginAccountPasswrd"
+            android:layout_marginRight="@dimen/login_margin_between_btn_login"/>
+
+        <TextView
+            android:id="@+id/tvLogin_With_Code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/tvLogin_with_code"
+            android:textSize="@dimen/login_textSize_loginCode"
+            android:layout_marginTop="@dimen/login_marginAccountPasswrd"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/FogetPasswrd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/ForgetPasswrd"
+            android:paddingRight="@dimen/login_margin_between_btnForget"
+            android:layout_marginTop="@dimen/login_marginBtn_login"/>
+
+        <TextView
+            android:id="@+id/NoAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/Login_NoAccount"
+            android:layout_marginTop="@dimen/login_marginBtn_login"/>
+
+        <TextView
+            android:id="@+id/SignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:text="@string/Login_SignUp"
+            android:layout_marginTop="@dimen/login_marginBtn_login"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/login_marginForget">
+
+        <ImageView
+            android:layout_width="111dp"
+            android:layout_height="1dp"
+            android:background="@mipmap/line_third"
+            android:layout_marginRight="@dimen/login_margin_betweenThirdLine" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Login_Third"
+            android:textSize="@dimen/login_textSize_third"/>
+        <ImageView
+            android:layout_width="111dp"
+            android:layout_height="1dp"
+            android:background="@mipmap/line_third"
+            android:layout_marginLeft="@dimen/login_margin_betweenThirdLine"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_marginThirdLogin">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_white_bg"
+            android:layout_marginRight="@dimen/login_margin_betweenQQWechat"
+            android:src="@mipmap/icon_qq"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/round_white_bg"
+            android:src="@mipmap/icon_wechat"/>
+
+    </LinearLayout>
+
+</LinearLayout>

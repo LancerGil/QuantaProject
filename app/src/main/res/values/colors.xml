@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="btnLogin">#80C269</color>
+    <color name="loginTitlebar">#fc6a73</color>
+    <color name="loginText">#385f2A</color>
+    <color name="signUpText">#3c2727</color>
+    <color name="cancelText">#696969</color>
+    <color name="tag_unSelected">#a69a9a</color>
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@color/loginTitlebar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_margin="1dp"
+            android:background="@mipmap/icon_comment"
+            android:layout_width="42dp"
+            android:layout_height="42dp" />
+        <EditText
+            android:hint="我来评论……"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_addStriker"
+        android:src="@mipmap/icon_striker"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="13dp"/>
+
+    <ImageView
+        android:id="@+id/iv_commentSend"
+        android:src="@mipmap/btn_send"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="12dp"/>
+</LinearLayout>

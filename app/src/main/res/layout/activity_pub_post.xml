@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.quantaproject.activity.PubPostActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_pub_post" />
+
+    <EditText
+        android:id="@+id/etPubTitle"
+        android:hint="@string/PleaseInputYoutTitle"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:gravity="left"
+        android:id="@+id/etPubContent"
+        android:hint="@string/PleaseInputYourContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/uploadPicBtnContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <TextView
+            android:text="在光标处插入图片"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:id="@+id/uploadPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_pink_bg"
+            android:src="@android:drawable/ic_menu_add"/>
+    </LinearLayout>
+</LinearLayout>

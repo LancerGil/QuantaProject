@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Quanta_Porject</string>
+    <string name="Login_Title">Welcome To GAGINANG</string>
+    <string name="Login_TitleBar">登录</string>
+    <string name="Login_NoAccount">还木有账号?</string>
+    <string name="Login_SignUp"><u>点击注册</u></string>
+    <string name="Login_SignIn">登录</string>
+    <string name="AccountHint">请输入您的手机号或用户名</string>
+    <string name="PasswordHint">请输入您的密码</string>
+    <string name="accout_can_not_be_null">账号不能为空</string>
+    <string name="password_can_not_be_empty">请输入密码</string>
+    <string name="Fail_to_login">登录失败，请稍后重试</string>
+    <string name="ForgetPasswrd"><u>忘记密码?</u></string>
+    <string name="signUp_title">注册</string>
+    <string name="tvLogin_with_code"><u>手机验证码登录</u></string>
+    <string name="Login_Third">第三方登录</string>
+    <string name="phoneNum_can_not_be_null">手机号码不能为空</string>
+    <string name="code_has_been_sent">验证码已发送，请注意短信</string>
+    <string name="code_sent_fail">发送验证码失败，请稍后重试</string>
+    <string name="VerificationCode_can_not_be_null">请填写验证码</string>
+    <string name="RealName_can_not_be_null">请填写你的真实姓名</string>
+    <string name="StudNum_can_not_be_null">请填写你的学号</string>
+    <string name="Password_can_not_be_null">请填写你的密码</string>
+    <string name="SDCard_not_found">未找到存储卡，无法存储照片！</string>
+    <string name="str_btm_navi_name_home">首页</string>
+    <string name="str_btm_navi_name_food">美食</string>
+    <string name="str_btm_navi_name_aty">活动</string>
+    <string name="str_btm_navi_name_mine">我的</string>
+    <string name="Fail_to_load_movement">加载失败，请稍后重试</string>
+    <string name="city_can_not_be_null">请选择您的城市</string>
+    <string name="Home_CATOGORY">板块</string>
+    <string name="Home_CHAOZHOU">潮州</string>
+    <string name="Home_HOT">热门</string>
+    <string name="Food_TitleBar">美食</string>
+    <string name="Program_TitleBar">活动</string>
+    <string name="Mine_TitleBar">我的</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="pub_post">发布帖子</string>
+    <string name="PleaseInputYoutTitle">请输入标题</string>
+    <string name="PleaseInputYourContent">请输入正文</string>
+    <string name="finish_editor_dialog_content">退出不会保存草稿，确定退出编辑界面？</string>
+    <string name="finish_eiditor_dialog_title">取消编辑</string>
+    <string name="dialog_determine">确定</string>
+    <string name="dialog_cencel">取消</string>
+    <string name="PubFail">发表失败！请稍后重试</string>
+    <string name="PubSuccess">发表成功！</string>
+    <string name="connecting">请稍后</string>
+    <string name="connecting_to_server">正在连接</string>
+    <string name="categoryname_chat">滴茶聊天</string>
+    <string name="categoryname_sport">运动生活</string>
+    <string name="categoryname_changeIdle">闲置交换</string>
+    <string name="categoryname_study">学习交流</string>
+    <string name="categoryname_program">活动</string>
+    <string name="categoryname_food">美食</string>
+    <string name="categoryname_raiders">新生攻略</string>
+
+    <string-array name="Movement_Home_label">
+        <item>热门</item>
+        <item>潮州</item>
+        <item>板块</item>
+    </string-array>
+
+    <string-array name="category_name">
+        <item>滴茶聊天</item>
+        <item>运动生活</item>
+        <item>闲置交换</item>
+        <item>学习交流</item>
+        <item>新生攻略</item>
+    </string-array>
+
+    <string-array name="category_action">
+        <item>chat</item>
+        <item>sport</item>
+        <item>changeIdle</item>
+        <item>study</item>
+        <item>raiders</item>
+    </string-array>
+
+    <string-array name="personalInfoName">
+        <item>头像</item>
+        <item>账号</item>
+        <item>性别</item>
+        <item>生日</item>
+        <item>昵称</item>
+    </string-array>
+
+    <string-array name="optionName">
+        <item>省流量模式</item>
+        <item>消息提醒</item>
+    </string-array>
+
+    <string-array name="option_mine">
+        <item>个人资料</item>
+        <item>我的消息</item>
+        <item>我的群</item>
+        <item>我的关注</item>
+        <item>我的收藏</item>
+        <item>设置</item>
+        <item>反馈</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cant_insert_to_not_content">不可以在正文以外的地方添加图片哦</string>
+    <string name="TAG_movement">movement</string>
+    <string name="TAG_position">position</string>
+</resources>

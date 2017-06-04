@@ -1,0 +1,517 @@
+[
+    {
+        "outputFile": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 44,
+                    "endOffset": 95
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\attrs.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 903,
+                        "endColumn": 45,
+                        "endOffset": 944
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 100,
+                    "endColumn": 47,
+                    "endOffset": 143
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\attrs.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 949,
+                        "endColumn": 48,
+                        "endOffset": 993
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 148,
+                    "endColumn": 49,
+                    "endOffset": 193
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\attrs.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 998,
+                        "endColumn": 50,
+                        "endOffset": 1044
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 198,
+                    "endColumn": 49,
+                    "endOffset": 243
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\attrs.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1049,
+                        "endColumn": 50,
+                        "endOffset": 1095
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 248,
+                    "endColumn": 62,
+                    "endOffset": 306
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 668,
+                        "endColumn": 62,
+                        "endOffset": 726
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 311,
+                    "endColumn": 59,
+                    "endOffset": 366
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1006,
+                        "endColumn": 59,
+                        "endOffset": 1061
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 371,
+                    "endColumn": 38,
+                    "endOffset": 405
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 94,
+                        "endColumn": 38,
+                        "endOffset": 128
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 410,
+                    "endColumn": 71,
+                    "endOffset": 477
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 731,
+                        "endColumn": 71,
+                        "endOffset": 798
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 482,
+                    "endColumn": 71,
+                    "endOffset": 549
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 803,
+                        "endColumn": 71,
+                        "endOffset": 870
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 554,
+                    "endColumn": 73,
+                    "endOffset": 623
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1066,
+                        "endColumn": 73,
+                        "endOffset": 1135
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 628,
+                    "endColumn": 37,
+                    "endOffset": 661
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 37,
+                        "endOffset": 89
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1712,
+                    "endColumn": 57,
+                    "endOffset": 1765
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 89,
+                        "endColumn": 57,
+                        "endOffset": 142
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1770,
+                    "endColumn": 55,
+                    "endOffset": 1821
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 147,
+                        "endColumn": 55,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1826,
+                    "endColumn": 59,
+                    "endOffset": 1881
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 247,
+                        "endColumn": 59,
+                        "endOffset": 302
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1886,
+                    "endColumn": 61,
+                    "endOffset": 1943
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 944,
+                        "endColumn": 61,
+                        "endOffset": 1001
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1948,
+                    "endColumn": 67,
+                    "endOffset": 2011
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1140,
+                        "endColumn": 67,
+                        "endOffset": 1203
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 2016,
+                    "endColumn": 42,
+                    "endOffset": 2054
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 203,
+                        "endColumn": 42,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 2059,
+                    "endColumn": 68,
+                    "endOffset": 2123
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\vpi__defaults.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 875,
+                        "endColumn": 68,
+                        "endOffset": 939
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 2128,
+                    "endLine": 38,
+                    "endColumn": 12,
+                    "endOffset": 2659
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 2482,
+                        "endLine": 72,
+                        "endColumn": 12,
+                        "endOffset": 3013
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2664,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 2994
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1139,
+                        "endLine": 36,
+                        "endColumn": 12,
+                        "endOffset": 1469
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2999,
+                    "endLine": 52,
+                    "endColumn": 12,
+                    "endOffset": 3331
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 687,
+                        "endLine": 26,
+                        "endColumn": 12,
+                        "endOffset": 1019
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 3336,
+                    "endLine": 58,
+                    "endColumn": 12,
+                    "endOffset": 3595
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 83,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 342
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 3600,
+                    "endLine": 65,
+                    "endColumn": 12,
+                    "endOffset": 3933
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 348,
+                        "endLine": 18,
+                        "endColumn": 12,
+                        "endOffset": 681
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 3938,
+                    "endLine": 72,
+                    "endColumn": 12,
+                    "endOffset": 4265
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 1475,
+                        "endLine": 44,
+                        "endColumn": 12,
+                        "endOffset": 1802
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 73,
+                    "startColumn": 4,
+                    "startOffset": 4270,
+                    "endLine": 79,
+                    "endColumn": 12,
+                    "endOffset": 4600
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 4,
+                        "startOffset": 2146,
+                        "endLine": 60,
+                        "endColumn": 12,
+                        "endOffset": 2476
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 4605,
+                    "endLine": 86,
+                    "endColumn": 12,
+                    "endOffset": 4937
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\AndroidPackage\\MaterialViewPager-master\\QuantaProject\\infiniteIndicator\\src\\main\\res\\values\\style.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 1808,
+                        "endLine": 52,
+                        "endColumn": 12,
+                        "endOffset": 2140
+                    }
+                }
+            }
+        ]
+    }
+]
