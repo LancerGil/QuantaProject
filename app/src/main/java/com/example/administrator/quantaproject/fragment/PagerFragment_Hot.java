@@ -60,6 +60,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
     private HashMap<String, View> mViewHashMap;
     private HashMap<String,String> url_maps;
     private Handler headlineHandler;
+    private int page=1;
 
 
     @Override
@@ -206,7 +207,8 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
     @Override
     public void onRefresh() {
         swipeRefreshLayout.setRefreshing(true);
-        adapterAtyMovement.clear();
+//        adapterAtyMovement.clear();
+        page++;
         loadMovement();
         recyclerView.setAdapter(adapterAtyMovement);
 //        testCircleIndicator();
@@ -223,7 +225,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
 
     private void loadMovement() {
         Log.i("loadMovement", "running");
-        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_HOT, phoneNum, 1, 10, new Movement.SuccessCallback() {
+        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_HOT, phoneNum, page, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 Log.i("loadMovement", "onSuccess");
@@ -253,7 +255,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
                 Log.i("loadMovement", "onSuccess");
                 data.addAll(movements);
                 Log.e("Data:","get");
-                        for (int i = 0; i< data.size(); i++){
+                        for (int i = 0; i< 3; i++){
                             try {
 //                                pageViews.add(new Page(data.get(i).getMovementID(),data.get(i).getImageUrls().get(0)));
                                 Log.e("imageheadurl",data.get(i).getImageUrls().get(0)+"");

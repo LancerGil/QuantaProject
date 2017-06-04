@@ -60,7 +60,7 @@ public class Fragment_Food extends Fragment implements SwipeRefreshLayout.OnRefr
     @Override
     public void onRefresh() {
         swipeRefreshLayout.setRefreshing(true);
-        adapterAtyMovement.clear();
+//        adapterAtyMovement.clear();
         loadMovement();
         adapterAtyMovement.notifyDataSetChanged();
         new Handler().postDelayed(new Runnable() {

@@ -33,6 +33,7 @@ public class CategoryActivity extends AppCompatActivity implements SwipeRefreshL
     private ScrollView scrollView;
     private View content_list;
     private LinearLayout content_container;
+    private int page=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,7 +135,7 @@ public class CategoryActivity extends AppCompatActivity implements SwipeRefreshL
     }
 
     private void loadMovement() {
-        new Movement(this,category_action, phoneNum, 1, 10, new Movement.SuccessCallback() {
+        new Movement(this,category_action, phoneNum, page, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 adapter_listMovement.addAll(movements);
@@ -149,7 +150,8 @@ public class CategoryActivity extends AppCompatActivity implements SwipeRefreshL
 
     @Override
     public void onRefresh() {
-        adapter_listMovement.clear();
+//        adapter_listMovement.clear();
+        page++;
         swipeRefreshLayout.setRefreshing(true);
         loadMovement();
         post_list.setAdapter(adapter_listMovement);

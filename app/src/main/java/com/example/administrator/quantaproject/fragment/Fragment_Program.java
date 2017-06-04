@@ -34,6 +34,7 @@ public class Fragment_Program extends Fragment implements SwipeRefreshLayout.OnR
     private LayoutInflater programLayoutInflater;
     private View programView;
     private RecyclerView program_list;
+    private int page=1;
 
 
     @Nullable
@@ -86,7 +87,8 @@ public class Fragment_Program extends Fragment implements SwipeRefreshLayout.OnR
     @Override
     public void onRefresh() {
         swipeRefreshLayout.setRefreshing(true);
-        adapter_program.clear();
+//        adapter_program.clear();
+        page++;
         loadMovement();
         program_list.setAdapter(adapter_program);
         new Handler().postDelayed(new Runnable() {
@@ -98,7 +100,7 @@ public class Fragment_Program extends Fragment implements SwipeRefreshLayout.OnR
     }
 
     private void loadMovement() {
-        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_PROGRAM, phoneNum, 1, 10, new Movement.SuccessCallback() {
+        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_PROGRAM, phoneNum, page, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 adapter_program.addAll(movements);

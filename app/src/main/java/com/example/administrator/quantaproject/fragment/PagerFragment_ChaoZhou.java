@@ -32,6 +32,7 @@ public class PagerFragment_ChaoZhou extends Fragment implements SwipeRefreshLayo
     private Adapter_ListMovement adapter_chaozhou = null;
     private String phoneNum;
     private RecyclerView post_chaozhou_list;
+    private int page=1;
 
 
     @Override
@@ -80,7 +81,7 @@ public class PagerFragment_ChaoZhou extends Fragment implements SwipeRefreshLayo
     }
 
     private void loadMovement(){
-        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_CHAOZHOU,phoneNum, 1, 10, new Movement.SuccessCallback() {
+        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_CHAOZHOU,phoneNum, page, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 adapter_chaozhou.addAll(movements);
@@ -96,7 +97,8 @@ public class PagerFragment_ChaoZhou extends Fragment implements SwipeRefreshLayo
     @Override
     public void onRefresh() {
         swipeRefreshLayout.setRefreshing(true);
-        adapter_chaozhou.clear();
+//        adapter_chaozhou.clear();
+        page++;
         loadMovement();
         post_chaozhou_list.setAdapter(adapter_chaozhou);
         adapter_chaozhou.notifyDataSetChanged();
