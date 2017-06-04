@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 
 public class PubPost {
 
-    public PubPost(String action, final String phoneNum,String token ,String title, String content, final SuccessCallback successCallback, final FailCallback failCallback){
+    public PubPost(String action, final String phoneNum,String token ,String title, String content,String categorySelected, final SuccessCallback successCallback, final FailCallback failCallback){
 
 
         try {
@@ -54,6 +54,7 @@ public class PubPost {
                     PingTai_Config.KEY_PHONE_NUM,phoneNum,
                     PingTai_Config.KEY_TOKEN,token,
                     PingTai_Config.KEY_PUBTITLE,title,
+                    PingTai_Config.KEY_CATEGORY,categorySelected,
                     PingTai_Config.KEY_PUBCONTENT, URLEncoder.encode(content,"utf-8")
             );
         } catch (UnsupportedEncodingException e) {

@@ -134,7 +134,7 @@ public class CategoryActivity extends AppCompatActivity implements SwipeRefreshL
     }
 
     private void loadMovement() {
-        new Movement(this,category_action, phoneNum, 1, 2, new Movement.SuccessCallback() {
+        new Movement(this,category_action, phoneNum, 1, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 adapter_listMovement.addAll(movements);

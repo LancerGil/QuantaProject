@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content" />
 
             <ImageView
-                android:id="@+id/iv_btnLike"
+                android:id="@+id/iv_comment_btnLike"
                 android:layout_marginTop="23dp"
                 android:src="@mipmap/like_pre"
                 android:layout_marginRight="5dp"

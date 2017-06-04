@@ -18,7 +18,7 @@ public class PersonalInfo {
     private List<String> personalInfo = new ArrayList<>();
 
     public PersonalInfo(Context context, final String phoneNum, final SuccessCallback successCallback, final FailCallback failCallback){
-        new NetConnection(PingTai_Config.SERVER_URL_LOCAL, HttpMethod.POST, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -51,7 +51,7 @@ public class PersonalInfo {
             public void onFail() {
 
             }
-        },PingTai_Config.KEY_ACTION,PingTai_Config.KEY_PERSONALINFO,
+        },PingTai_Config.KEY_PERSONALINFO,
                 PingTai_Config.KEY_PHONE_NUM,phoneNum);
     }
 

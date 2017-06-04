@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ import com.example.administrator.quantaproject.data.PingTai_Config;
 import com.example.administrator.quantaproject.net.DownloadUtil;
 import com.example.administrator.quantaproject.net.HttpMethod;
 import com.example.administrator.quantaproject.net.NetConnection;
+import com.example.administrator.quantaproject.net.PutComment;
 import com.example.administrator.quantaproject.tools.Adapter_CommentList;
 import com.example.administrator.quantaproject.tools.BitmapUtils;
 
@@ -42,7 +44,9 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class PostDetailActivity extends AppCompatActivity {
 
@@ -71,7 +75,7 @@ public class PostDetailActivity extends AppCompatActivity {
 
 
             final Intent movementDetail = getIntent();
-            String movementId = movementDetail.getStringExtra(PingTai_Config.KEY_MOVEMENT_ID);
+            final String movementId = movementDetail.getStringExtra(PingTai_Config.KEY_MOVEMENT_ID);
             String title = movementDetail.getStringExtra(PingTai_Config.KEY_PUBTITLE);
             String pubUser = movementDetail.getStringExtra(PingTai_Config.KEY_PUBUSER);
             String pubTime = movementDetail.getStringExtra(PingTai_Config.KEY_PUBTIME);
@@ -207,7 +211,7 @@ public class PostDetailActivity extends AppCompatActivity {
             btn_follow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new NetConnection(PingTai_Config.SERVER_URL_LOCAL, HttpMethod.POST, new NetConnection.SuccessCallback() {
+                    new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
                         @Override
                         public void onSuccess(String result) {
                             try {
@@ -243,7 +247,7 @@ public class PostDetailActivity extends AppCompatActivity {
                         public void onFail() {
 
                         }
-                    },PingTai_Config.KEY_ACTION,PingTai_Config.ACTION_FOLLOW,
+                    },PingTai_Config.ACTION_FOLLOW,
                             PingTai_Config.KEY_PHONE_NUM,hostPhoneNum,
                             PingTai_Config.KEY_TOKEN,token,
                             PingTai_Config.KEY_TARGET_USER_PHONE_NUM,phoneNum);
@@ -265,6 +269,32 @@ public class PostDetailActivity extends AppCompatActivity {
             rvCommentList.setLayoutManager(new LinearLayoutManager(this));
             rvCommentList.setAdapter(adapter_commentList);
             rvCommentList.setHasFixedSize(true);
+
+            ImageView sendComment = (ImageView) fragment_NormalPost.findViewById(R.id.iv_commentSend);
+            final EditText etComment = (EditText) fragment_NormalPost.findViewById(R.id.tv_etComment);
+            sendComment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Date putComTime = new Date();// 获取当前时间
+                    SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间
+                    sdf.applyPattern("yyyy-MM-dd_HH-mm");//设置格式
+                    if(!etComment.getText().toString().isEmpty()){
+                        new PutComment(phoneNum, token, movementId, etComment.getText().toString(), sdf.format(putComTime), new PutComment.SuccessCallback() {
+                            @Override
+                            public void onSuccess() {
+                                Toast.makeText(PostDetailActivity.this,"评论成功！",Toast.LENGTH_SHORT);
+                                etComment.setText("");
+                            }
+                        }, new PutComment.FailCallback() {
+                            @Override
+                            public void onFail() {
+                                Toast.makeText(PostDetailActivity.this,"网络出问题了，稍后重试吧",Toast.LENGTH_SHORT);
+                            }
+                        });
+                    }
+                }
+            });
+
 
             container.addView(fragment_NormalPost);
         }
@@ -290,7 +320,7 @@ public class PostDetailActivity extends AppCompatActivity {
     }
 
     private void loadComments(){
-        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {

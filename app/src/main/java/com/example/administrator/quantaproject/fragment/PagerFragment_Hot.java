@@ -148,8 +148,6 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
             }
         };
         loadHeadline();
-
-
         mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
@@ -225,7 +223,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
 
     private void loadMovement() {
         Log.i("loadMovement", "running");
-        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_HOT, phoneNum, 1, 4, new Movement.SuccessCallback() {
+        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_HOT, phoneNum, 1, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 Log.i("loadMovement", "onSuccess");
@@ -265,9 +263,25 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
                             }
                             Log.e("PageViews_ADD", data.get(i).getMovementID());
                         }
-                        Message msg = new Message();
-                        msg.obj = url_maps;
-                        headlineHandler.sendMessage(msg);
+                for(String name : url_maps.keySet()){
+                    TextSliderView textSliderView = new TextSliderView(getActivity());
+                    // initialize a SliderLayout
+                    textSliderView
+                            .description(name)
+                            .image(url_maps.get(name))
+                            .setScaleType(BaseSliderView.ScaleType.Fit)
+                            .setOnSliderClickListener(PagerFragment_Hot.this);
+
+                    //add your extra information
+                    textSliderView.bundle(new Bundle());
+                    textSliderView.getBundle()
+                            .putString("extra",name);
+
+                    mDemoSlider.addSlider(textSliderView);
+                }
+//                        Message msg = new Message();
+//                        msg.obj = url_maps;
+//                        headlineHandler.sendMessage(msg);
 //                mDefaultIndicator.notifyDataChange(pageViews);
 //                mDefaultIndicator.setCurrentItem(0);
             }

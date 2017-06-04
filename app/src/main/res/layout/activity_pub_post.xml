@@ -32,6 +32,12 @@
         android:layout_height="wrap_content"
         android:gravity="right">
 
+        <Spinner
+            android:id="@+id/pub_chooseCate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        </Spinner>
+
         <TextView
             android:text="在光标处插入图片"
             android:layout_width="wrap_content"

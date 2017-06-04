@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class Login {
     public Login(String phoneNum, String password,final SuccessCallback successCallback,final FailCallback failCallback) {
-        new NetConnection(PingTai_Config.SERVER_URL_LOCAL, HttpMethod.POST, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -40,8 +40,7 @@ public class Login {
             public void onFail() {
 
             }
-        },PingTai_Config.KEY_ACTION,
-                PingTai_Config.ACTION_LOGIN,
+        }, PingTai_Config.ACTION_LOGIN,
                 PingTai_Config.KEY_PHONE_NUM,phoneNum,PingTai_Config.KEY_PASSWORD,password);
     }
 

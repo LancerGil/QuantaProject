@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.administrator.quantaproject.R;
 import com.example.administrator.quantaproject.data.Movements;
+import com.example.administrator.quantaproject.data.PingTai_Config;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -66,7 +67,7 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
 
         ((ItemMovement) holder).title.setText(movements.getTitle());
 
-        if(!movements.getCategory().equals(R.string.categoryname_program)) {
+        if(!movements.getCategory().equals(PingTai_Config.ACTION_MOVEMENT_PROGRAM)) {
 
             Log.e("Category:",movements.getCategory());
             width = 192;
@@ -121,7 +122,7 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
                     .setImageRequest(request)
                     .build();
 
-            if(movements.getCategory().equals(R.string.categoryname_program)){
+            if(movements.getCategory().equals(PingTai_Config.ACTION_MOVEMENT_PROGRAM)){
                 final DraweeController controller1 = Fresco.newDraweeControllerBuilder()
                         .setOldController(programImage.getController())
                         .setImageRequest(request)
@@ -224,6 +225,9 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
         tvFoodPubTime,tvFoodPubUser,tvFoodCategory;
         public ItemFood(View itemView) {
             super(itemView);
+            imageFood = (SimpleDraweeView) itemView.findViewById(R.id.sdv_FoodImage);
+            foodLoca = (ImageView) itemView.findViewById(R.id.rv_food);
+//            foodBtnlike = (ImageView) itemView.findViewById(R.i);
         }
     }
 }

@@ -69,11 +69,11 @@
     </string-array>
 
     <string-array name="category_action">
-        <item>chat</item>
-        <item>sport</item>
-        <item>changeIdle</item>
-        <item>study</item>
-        <item>raiders</item>
+        <item>Chat</item>
+        <item>Sport</item>
+        <item>ChangeIdle</item>
+        <item>Study</item>
+        <item>Raiders</item>
     </string-array>
 
     <string-array name="personalInfoName">
@@ -90,13 +90,26 @@
     </string-array>
 
     <string-array name="option_mine">
-        <item>个人资料</item>
-        <item>我的消息</item>
-        <item>我的群</item>
-        <item>我的关注</item>
-        <item>我的收藏</item>
-        <item>设置</item>
-        <item>反馈</item>
+    <item>个人资料</item>
+    <item>我的消息</item>
+    <item>我的群</item>
+    <item>我的关注</item>
+    <item>我的收藏</item>
+    <item>设置</item>
+    <item>反馈</item>
+</string-array>
+
+    <string-array name="all_category">
+        <item>选择帖子类型</item>
+        <item>Chat</item>
+        <item>Sport</item>
+        <item>IdleChange</item>
+        <item>Study</item>
+        <item>Raiders</item>
+        <item>Chaozhou</item>
+        <item>Program</item>
+        <item>Normal</item>
+        <item>Food</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

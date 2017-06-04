@@ -24,7 +24,7 @@ public class Movement {
         this.context = context;
         String  token = PingTai_Config.getCachedToken(context);
 
-        new NetConnection(PingTai_Config.SERVER_URL_LOCAL,HttpMethod.POST, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL,HttpMethod.GET, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -38,7 +38,7 @@ public class Movement {
                                 List<Movements> movements = new ArrayList<>();
                                 JSONArray movementJSONArray = result_json.getJSONArray(PingTai_Config.KEY_MOVEMENT);
 
-                                for (int i = 0;i < movementJSONArray.length();i++){
+                                for (int i = 0;i < result_json.getInt(PingTai_Config.KEY_PERPAGE);i++){
                                     JSONObject movementObj = movementJSONArray.getJSONObject(i);
                                     Log.i("IMAGEurl",movementObj.getString(PingTai_Config.KEY_IMAGEURL));
                                     movements.add(new Movements(
@@ -79,7 +79,8 @@ public class Movement {
                 failCallback.onFail();
             }
         },
-                PingTai_Config.KEY_ACTION,
+                PingTai_Config.KEY_MOVEMENT,
+                PingTai_Config.KEY_CATEGORY,
                 typeOfMovement
                 ,PingTai_Config.KEY_PHONE_NUM,phoneNum
                 ,PingTai_Config.KEY_TOKEN,token

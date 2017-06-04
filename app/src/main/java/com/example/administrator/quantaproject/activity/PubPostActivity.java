@@ -25,8 +25,11 @@ import android.text.style.DynamicDrawableSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.administrator.quantaproject.R;
@@ -47,7 +50,7 @@ public class PubPostActivity extends AppCompatActivity {
 
     private ImageView btnTurnBack,btnPublish,btn_pop_from_gallary,btn_pop_from_camera;
     private EditText etPostTitle,etPostContent;
-    private String phoneNum,token;
+    private String phoneNum,token,categorySelected;
     private LayoutInflater inflater;
     private File file;
     private ImageView uploadPic;
@@ -55,6 +58,7 @@ public class PubPostActivity extends AppCompatActivity {
     private ArrayList<String> preimageName = new ArrayList<>(), finalImageNames = new ArrayList<>();
     private ArrayList<File> images = new ArrayList<>();
     private ArrayList<Integer> indexes = new ArrayList<>();
+    private Spinner chooseCategory;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -70,6 +74,9 @@ public class PubPostActivity extends AppCompatActivity {
         phoneNum = getIntent().getStringExtra(PingTai_Config.KEY_PHONE_NUM);
         token = PingTai_Config.getCachedToken(PubPostActivity.this);
         uploadPic = (ImageView) findViewById(R.id.uploadPic) ;
+        chooseCategory  = (Spinner) findViewById(R.id.pub_chooseCate);
+        setupSpinner();
+
 
         uploadPic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +89,7 @@ public class PubPostActivity extends AppCompatActivity {
             }
         });
 
+
         btnTurnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,11 +101,12 @@ public class PubPostActivity extends AppCompatActivity {
             }
         });
 
+
         btnPublish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (etPostTitle.getText().length()<=30&&etPostContent.getText().length()<=3000
-                        &&etPostTitle.getText().length()>0&&etPostContent.getText().length()>0) {
+                        &&etPostTitle.getText().length()>0&&etPostContent.getText().length()>0&&!categorySelected.equals("选择帖子类型")) {
 
                     imageAddTime = new Date();// 获取当前时间
 
@@ -107,7 +116,8 @@ public class PubPostActivity extends AppCompatActivity {
                             phoneNum,
                             token,
                             etPostTitle.getText().toString().replace(" ","").replace("\n","+"),
-                            etPostContent.getText().toString().replace(" ","").replace("\n","+"),
+                            etPostContent.getText().toString().replace(" ","#").replace("\n","+"),
+                            categorySelected,
                             new PubPost.SuccessCallback() {
                                 @Override
                                 public void onSuccess(final int movementId) {
@@ -144,10 +154,12 @@ public class PubPostActivity extends AppCompatActivity {
                         }
                     });
                 }else {
-                    Toast.makeText(PubPostActivity.this,"标题/内容太长或没有填写，请检查",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PubPostActivity.this,"标题/内容/帖子类型太长或没有填写，请检查",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
     }
 
 
@@ -368,5 +380,29 @@ public class PubPostActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private void setupSpinner() {
+
+        ArrayAdapter genderSpinnerAdapter = ArrayAdapter.createFromResource(this,
+                R.array.all_category, android.R.layout.simple_spinner_item);
+
+        // 每行一个
+        genderSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+        //给spinner添加adapter
+        chooseCategory.setAdapter(genderSpinnerAdapter);
+
+        chooseCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                categorySelected = (String) parent.getItemAtPosition(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }

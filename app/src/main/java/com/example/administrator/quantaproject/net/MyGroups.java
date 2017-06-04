@@ -20,8 +20,8 @@ public class MyGroups {
     private List<MyGroup> myGroupsList = new ArrayList<>();
 
     public MyGroups(Context context, String phoneNum, String token, final SuccessCallback successCallback, final FailCallback failCallback){
-        new NetConnection(PingTai_Config.SERVER_URL_LOCAL, HttpMethod.POST, new NetConnection.SuccessCallback() {
-            @Override
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+                @Override
             public void onSuccess(String result) {
                 try {
                     JSONObject jsonObjectResult = new JSONObject(result);

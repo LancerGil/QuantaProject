@@ -106,7 +106,7 @@ public class Adapter_CommentList extends RecyclerView.Adapter {
             commentHost = (TextView) itemView.findViewById(R.id.tv_commentHost);
             commentContent = (TextView) itemView.findViewById(R.id.tv_normalPostContent);
             commentTime = (TextView) itemView.findViewById(R.id.tv_commentTime);
-            btnLike = (ImageView) itemView.findViewById(R.id.iv_btnLike);
+            btnLike = (ImageView) itemView.findViewById(R.id.iv_comment_btnLike);
             likeTimes = (TextView) itemView.findViewById(R.id.tv_likeTimes);
         }
     }

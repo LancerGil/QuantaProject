@@ -80,7 +80,7 @@ public class PagerFragment_ChaoZhou extends Fragment implements SwipeRefreshLayo
     }
 
     private void loadMovement(){
-        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_CHAOZHOU,phoneNum, 1, 2, new Movement.SuccessCallback() {
+        new Movement(getActivity(),PingTai_Config.ACTION_MOVEMENT_CHAOZHOU,phoneNum, 1, 10, new Movement.SuccessCallback() {
             @Override
             public void onSuccess(int page, int perpage, List<Movements> movements) {
                 adapter_chaozhou.addAll(movements);

@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
 
 public class PingTai_Config {
 
-    public static final String SERVER_URL = "http://192.168.165.83/gadilan/home/user";
+    public static final String SERVER_URL = "http://121.42.171.181/quanta/gadilan/index.php/home/user";
     public static final String SERVER_URL_LOCAL = "http://192.168.165.86:8080/testProject/NewFile.jsp";
     public static final String SERVER_URL_LOCAL_IMAGE = "http://192.168.165.86:8080/testProject/image/";
     public static final String SERVER_URL_UPLOAD = "http://192.168.165.83/gadilan/home/movement";
@@ -23,15 +23,16 @@ public class PingTai_Config {
     public static final String ACTION_GETPAGEVIEWCONTENT = "getPageViewContent";
     public static final String ACTION_SIGNUP = "signup";
     public static final String ACTION_UPLOADINFO = "uploadinfo";
-    public static final String ACTION_MOVEMENT_HOT = "movement_hot";
-    public static final String ACTION_MOVEMENT_FOOD = "movement_food";
-    public static final String ACTION_MOVEMENT_PROGRAM = "movement_program";
-    public static final String ACTION_MOVEMENT_CHAOZHOU = "movement_chaozhou";
-    public static final String ACTION_MOVEMENT_HEADLINE = "movement_headline";
+    public static final String ACTION_MOVEMENT_HOT = "Normal";
+    public static final String ACTION_MOVEMENT_FOOD = "Food";
+    public static final String ACTION_MOVEMENT_PROGRAM = "Program";
+    public static final String ACTION_MOVEMENT_CHAOZHOU = "Chaozhou";
+    public static final String ACTION_MOVEMENT_HEADLINE = "Chaozhou";
     public static final String ACTION_PUBLISH = "publish";
     public static final String ACTION_FOLLOW = "follow";
     public static final String ACTION_MYMESSAGE = "myMessage";
     public static final String ACTION_MYGROUPS = "myGroups";
+    public static final String ACTION_PUTCOMMENT = "putComment";
 
     public static final String KEY_TOKEN = "token";
     public static final String KEY_ACTION = "action";
@@ -77,12 +78,15 @@ public class PingTai_Config {
     public static final String KEY_MYGROUPS = "myGroups";
     public static final String KEY_MYGROUPS_IMAGEURL = "myGroupsImageUrl";
     public static final String KEY_MYGROUPS_NAME = "myGroupsName";
+    public static final String KEY_COMMENT_MOVEMENTID = "commentMovementId";
+    public static final String KEY_COMMENT_CONTENT = "commentContent";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;
     public static final int RESULT_STATUS_INVALID_TOKEN = 2;
 
     public static final int ACTIVITY_RESULT_NEED_REFRESH = 10000;
+
 
 
     public static String getCachedToken(Context context){
