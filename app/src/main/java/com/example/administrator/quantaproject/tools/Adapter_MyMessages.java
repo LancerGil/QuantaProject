@@ -49,6 +49,7 @@ public class Adapter_MyMessages extends RecyclerView.Adapter {
         ((ItemMyMessage)holder).tvChatWin.setText(myMessageList.get(position).getTvChatWindow());
         ((ItemMyMessage)holder).tvLastSender.setText(myMessageList.get(position).getLastSender()+":");
         ((ItemMyMessage)holder).tvMessageCon.setText(myMessageList.get(position).getMessageCon());
+
     }
 
     @Override

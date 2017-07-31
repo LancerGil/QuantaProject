@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.example.administrator.quantaproject.R;
 import com.example.administrator.quantaproject.data.Movements;
@@ -29,7 +28,6 @@ public class Fragment_Food extends Fragment implements SwipeRefreshLayout.OnRefr
     private String phoneNum;
     private SwipeRefreshLayout swipeRefreshLayout;
     private Adapter_ListMovement adapterAtyMovement;
-    private ListView listView;
 
     @Nullable
     @Override

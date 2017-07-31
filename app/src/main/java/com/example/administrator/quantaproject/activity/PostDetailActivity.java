@@ -97,6 +97,7 @@ public class PostDetailActivity extends AppCompatActivity {
             Toolbar toolbar = (Toolbar) fragment_NormalPost.findViewById(R.id.title_toolbar);
             toolbar.setNavigationIcon(R.mipmap.btn_back);
             toolbar.setTitleTextColor(Color.WHITE);
+            toolbar.setTitle(R.string.post_detail_title);
             if(categoryNamePos!=-1) {
                 ctegoryName = getResources().getStringArray(R.array.category_name)[categoryNamePos];
                 toolbar.setTitle(ctegoryName);
@@ -212,7 +213,7 @@ public class PostDetailActivity extends AppCompatActivity {
             btn_follow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+                    new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
                         @Override
                         public void onSuccess(String result) {
                             try {
@@ -225,7 +226,7 @@ public class PostDetailActivity extends AppCompatActivity {
                                         Toast.makeText(PostDetailActivity.this,"网络出问题啦，过一会再试吧",Toast.LENGTH_SHORT).show();
                                         break;
                                     case PingTai_Config.RESULT_STATUS_INVALID_TOKEN:
-                                        Toast.makeText(PostDetailActivity.this,"登录已过期，请重新登录",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(PostDetailActivity.this,"登录已过期，请重新登录吧",Toast.LENGTH_SHORT).show();
                                         final Intent turnToLogin = new Intent(PostDetailActivity.this,LoginActivity.class);
                                         new Thread(new Runnable() {
                                             @Override
@@ -248,7 +249,7 @@ public class PostDetailActivity extends AppCompatActivity {
                         public void onFail() {
 
                         }
-                    },PingTai_Config.ACTION_FOLLOW,
+                    },PingTai_Config.KEY_ACTION,PingTai_Config.ACTION_FOLLOW,
                             PingTai_Config.KEY_PHONE_NUM,hostPhoneNum,
                             PingTai_Config.KEY_TOKEN,token,
                             PingTai_Config.KEY_TARGET_USER_PHONE_NUM,phoneNum);
@@ -321,7 +322,7 @@ public class PostDetailActivity extends AppCompatActivity {
     }
 
     private void loadComments(){
-        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {

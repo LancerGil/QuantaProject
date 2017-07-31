@@ -20,8 +20,7 @@ import com.example.administrator.quantaproject.net.DownloadUtil;
 import com.example.administrator.quantaproject.net.PersonalInfo;
 import com.example.administrator.quantaproject.tools.BitmapUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/6/3.
@@ -29,7 +28,6 @@ import java.util.List;
 
 public class PagerFragment_Mine_PersonalInfo extends Fragment {
     private String phoneNum;
-    private List<String> personalInfodata = new ArrayList<>();
     private View PersonalInfoContainer;
     private Handler headHandler ;
 
@@ -47,8 +45,7 @@ public class PagerFragment_Mine_PersonalInfo extends Fragment {
     private void loadPersonalInfo(){
         new PersonalInfo(getActivity(), phoneNum, new PersonalInfo.SuccessCallback() {
             @Override
-            public void onSuccess(List<String> result) {
-                personalInfodata.addAll(result);
+            public void onSuccess(final Map<String,String> result) {
                 final ImageView ivPersonalInfoHead = (ImageView) PersonalInfoContainer.findViewById(R.id.iv_item_personal_info_head);
                 headHandler = new Handler(){
                     @Override
@@ -62,7 +59,7 @@ public class PagerFragment_Mine_PersonalInfo extends Fragment {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            Bitmap head = DownloadUtil.getHttpBitmap(personalInfodata.get(0));
+                            Bitmap head = DownloadUtil.getHttpBitmap(result.get(PingTai_Config.KEY_HEAD_IMAGEURL));
                             Bitmap finalHead = BitmapUtils.circleBitmap(BitmapUtils.imageCrop(head,1,1,false));
                             Message msg = new Message();
                             msg.obj = finalHead;
@@ -72,16 +69,16 @@ public class PagerFragment_Mine_PersonalInfo extends Fragment {
                 }
 
                 TextView tvAccount = (TextView) PersonalInfoContainer.findViewById(R.id.tv_item_personal_info_account);
-                tvAccount.setText(personalInfodata.get(1));
+                tvAccount.setText(result.get(PingTai_Config.KEY_PHONE_NUM));
 
                 TextView tvSex = (TextView) PersonalInfoContainer.findViewById(R.id.tv_item_personal_info_sex);
-                tvSex.setText(personalInfodata.get(2));
+                tvSex.setText(result.get(PingTai_Config.KEY_SEX));
 
                 TextView tvBir = (TextView) PersonalInfoContainer.findViewById(R.id.tv_item_personal_info_birthday);
-                tvBir.setText(personalInfodata.get(3));
+                tvBir.setText(result.get(PingTai_Config.KEY_BIRTHDAY));
 
                 TextView tvNick = (TextView) PersonalInfoContainer.findViewById(R.id.tv_item_personal_info_nickname);
-                tvNick.setText(personalInfodata.get(4));
+                tvNick.setText(result.get(PingTai_Config.KEY_NICKNAME));
             }
         }, new PersonalInfo.FailCallback() {
             @Override

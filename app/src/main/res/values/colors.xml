@@ -10,5 +10,6 @@
     <color name="signUpText">#3c2727</color>
     <color name="cancelText">#696969</color>
     <color name="tag_unSelected">#a69a9a</color>
+    <color name="cropShadow">#77000000</color>
 
 </resources>

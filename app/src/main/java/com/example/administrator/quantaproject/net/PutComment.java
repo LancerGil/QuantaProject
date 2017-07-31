@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public class PutComment {
     public PutComment(String phoneNum, String token, String comMovementId, String comContent,
                       String comTime, final SuccessCallback successcallback, final FailCallback failCallback){
-        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {

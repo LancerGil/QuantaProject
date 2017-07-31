@@ -195,7 +195,6 @@ public class PubPostActivity extends AppCompatActivity {
      * Dialog中的item
      * */
     private String[] items = new String[] { "选择本地图片", "拍照" };
-    /**设置选择头像来源Dialog*/
     private void showInsertPicDialog() {
 
         new AlertDialog.Builder(this)

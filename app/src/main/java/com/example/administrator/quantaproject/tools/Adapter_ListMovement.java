@@ -21,8 +21,6 @@ import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +41,8 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
         this.context = context;
     }
 
+    private static final String TAG = "Adapter_ListMovement";
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -62,10 +62,10 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
 
         Log.e("POSITION", position + "");
         Movements movements = data.get(position);
-        Log.e("TAG_movement:",movements.toString());
+//        Log.e("TAG_movement:",movements.toString());
         holder.itemView.setTag(R.string.TAG_movement,movements);
 
-        ((ItemMovement) holder).title.setText(movements.getTitle());
+        ((ItemMovement) holder).title.setText(movements.getPubTitle());
 
         if(!movements.getCategory().equals(PingTai_Config.ACTION_MOVEMENT_PROGRAM)) {
 
@@ -76,7 +76,7 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
             pubImageLP.height = height;
             pubImageLP.width = width;
             ((ItemMovement) holder).pubImage.setLayoutParams(pubImageLP);
-        }else if(!(movements.getImageUrls().length()==0)){
+        }else if(!(movements.getImageUrl().size()==0)){
 
             ViewGroup.LayoutParams itemContainerLP = ((ItemMovement) holder).imageContainer.getLayoutParams();
             itemContainerLP.height = 267;
@@ -96,26 +96,22 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
             ((ItemMovement) holder).imageContainer.addView(programImage);
         }
 
-        if(movements.getImageUrls().length()==0){
+        if(movements.getImageUrl().size()==0){
             Log.e("ImageUrlIs:","null");
-            Log.e("ImageUrlIs:", movements.getImageUrls()+"");
+            Log.e("ImageUrlIs:", movements.getImageUrl()+"");
             ((ItemMovement) holder).preContent.setMaxWidth(456);
 
         }else {
             Log.e("ImageUrlIs:","notNull");
-            Log.e("ImageUrlIs:", movements.getImageUrls()+"");
+            Log.e("ImageUrlIs:", movements.getImageUrl()+"");
             ((ItemMovement) holder).preContent.setMaxWidth(288);
 
             Log.e("WIDTH:",width+"");
             Log.e("WIDTH:",height+"");
             ImageRequest request = null;
-            try {
-                request = ImageRequestBuilder.newBuilderWithSource(Uri.parse((String) movements.getImageUrls().get(0)))
-                        .setResizeOptions(new ResizeOptions(width, height))
-                        .build();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            request = ImageRequestBuilder.newBuilderWithSource(Uri.parse((String) movements.getImageUrl().get(0)))
+                    .setResizeOptions(new ResizeOptions(width, height))
+                    .build();
 
             DraweeController controller = Fresco.newDraweeControllerBuilder()
                     .setOldController(((ItemMovement) holder).pubImage.getController())
@@ -175,7 +171,10 @@ public class Adapter_ListMovement extends RecyclerView.Adapter<RecyclerView.View
     }
 
     public void addAll(List<Movements> data) {
+        data.addAll(this.data);
+        this.data.clear();
         this.data.addAll(data);
+        Log.d(TAG,"dataSize:"+data.size());
         notifyDataSetChanged();
     }
 

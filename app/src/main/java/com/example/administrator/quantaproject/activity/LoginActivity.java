@@ -67,9 +67,20 @@ public class LoginActivity extends Activity{
             @Override
             public void onClick(View v) {
                 Intent TurnToSignUpAty = new Intent(LoginActivity.this,SignUpActivity.class);
-                startActivity(TurnToSignUpAty);
+                startActivityForResult(TurnToSignUpAty,0);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (resultCode){
+            case PingTai_Config.ACTIVITY_RESULT_FINISH:
+                finish();
+                break;
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     private EditText etPhoneNum = null;

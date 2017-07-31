@@ -20,7 +20,7 @@ public class MyMessages {
     private List<MyMessage> myMessageList = new ArrayList<>();
 
     public MyMessages(Context context, String phoneNum, String token, final SuccessCallback successCallback, final FailCallback failCallback){
-        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {

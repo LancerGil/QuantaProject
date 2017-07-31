@@ -1,142 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent" >
-    <LinearLayout
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical">
+    <include layout="@layout/title_toolbar"> </include>
 
-    <include layout="@layout/title_toolbar">
-
-    </include>
-
-    <TextView
-        android:layout_marginTop="20dp"
-        android:textColor="@android:color/black"
-        android:id="@+id/tv_normalPostTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_normalPostPubUser_upon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#959595"
-            android:layout_marginRight="5dp"/>
-        <ImageView
-            android:background="#959595"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginRight="5dp"/>
-
-        <TextView
-            android:textColor="#959595"
-            android:textSize="16sp"
-            android:id="@+id/tv_normalPostPubTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/tv_normalPostCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <ImageView
-        android:src="@mipmap/divider_up"
-        android:id="@+id/iv_normalPostDivider_upon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"/>
-
-    <ImageView
-        android:id="@+id/iv_normalPostImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_normalPostContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"/>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/ll_normalPostPossibleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </LinearLayout>
-
-    <ImageView
-        android:layout_marginTop="20dp"
-        android:src="@mipmap/divider_down"
-        android:id="@+id/iv_normalPostDivider_blow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <ImageView
-        android:layout_marginTop="30dp"
-        android:id="@+id/iv_normalPostPubUserHead"
-        android:background="@drawable/round_white_bg"
-        android:layout_width="65dp"
-        android:layout_height="65dp" />
-
-    <TextView
-        android:layout_marginTop="15dp"
-        android:id="@+id/tv_normalPostPubUser_blow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:textSize="20sp"
-            android:background="@mipmap/btn_follow_bg"
-            android:textColor="#fc6972"
-            android:id="@+id/btn_normalPostFollow"
-            android:text="加关注"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"/>
-
-        <Button
-            android:background="@mipmap/btn_follow_bg"
-            android:textSize="20sp"
-            android:textColor="#fc6972"
-            android:text="发私信"
-            android:id="@+id/btn_normalPostContact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_marginTop="50dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:descendantFocusability="blocksDescendants">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_normalPost_commentList"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        </android.support.v7.widget.RecyclerView>
 
-    </RelativeLayout>
-        <include layout="@layout/bottombar_put_comment"></include>
+
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/black"
+                android:id="@+id/tv_normalPostTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_normalPostPubUser_upon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#959595"
+                    android:layout_marginRight="5dp"/>
+                <ImageView
+                    android:background="#959595"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:textColor="#959595"
+                    android:textSize="16sp"
+                    android:id="@+id/tv_normalPostPubTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/tv_normalPostCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@mipmap/divider_up"
+                android:id="@+id/iv_normalPostDivider_upon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                android:id="@+id/iv_normalPostImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_normalPostContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ll_normalPostPossibleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/divider_down"
+                android:id="@+id/iv_normalPostDivider_blow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginTop="30dp"
+                android:id="@+id/iv_normalPostPubUserHead"
+                android:background="@drawable/round_white_bg"
+                android:layout_width="65dp"
+                android:layout_height="65dp" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/tv_normalPostPubUser_blow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:textSize="20sp"
+                    android:background="@mipmap/btn_follow_bg"
+                    android:textColor="#fc6972"
+                    android:id="@+id/btn_normalPostFollow"
+                    android:text="加关注"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"/>
+
+                <Button
+                    android:background="@mipmap/btn_follow_bg"
+                    android:textSize="20sp"
+                    android:textColor="#fc6972"
+                    android:text="发私信"
+                    android:id="@+id/btn_normalPostContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_normalPost_commentList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/bottombar_put_comment"></include>
 </LinearLayout>
-</ScrollView>

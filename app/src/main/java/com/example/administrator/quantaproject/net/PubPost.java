@@ -18,7 +18,7 @@ public class PubPost {
 
 
         try {
-            new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+            new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
                 @Override
                 public void onSuccess(String result) {
                     try {
@@ -50,7 +50,7 @@ public class PubPost {
                 public void onFail() {
 
                 }
-            },action,
+            },PingTai_Config.KEY_ACTION,action,
                     PingTai_Config.KEY_PHONE_NUM,phoneNum,
                     PingTai_Config.KEY_TOKEN,token,
                     PingTai_Config.KEY_PUBTITLE,title,

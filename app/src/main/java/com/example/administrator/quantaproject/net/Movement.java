@@ -5,15 +5,17 @@ import android.util.Log;
 
 import com.example.administrator.quantaproject.data.Movements;
 import com.example.administrator.quantaproject.data.PingTai_Config;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Movement {
+    private static final  String TAG = "Movement";
 
     private Context context = null;
 
@@ -24,7 +26,7 @@ public class Movement {
         this.context = context;
         String  token = PingTai_Config.getCachedToken(context);
 
-        new NetConnection(PingTai_Config.SERVER_URL,HttpMethod.GET, new NetConnection.SuccessCallback() {
+        new NetConnection(PingTai_Config.SERVER_URL,HttpMethod.POST, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -35,26 +37,31 @@ public class Movement {
                     switch (result_json.getInt(PingTai_Config.KEY_STATUS)){
                         case PingTai_Config.RESULT_STATUS_SUCCESS:
                             if (successCallback!=null){
-                                List<Movements> movements = new ArrayList<>();
+                                Gson resultGson = new Gson();
+//                                List<Movements> movements = new ArrayList<>();
                                 JSONArray movementJSONArray = result_json.getJSONArray(PingTai_Config.KEY_MOVEMENT);
-
-                                for (int i = 0;i < result_json.getInt(PingTai_Config.KEY_PERPAGE);i++){
-                                    JSONObject movementObj = movementJSONArray.getJSONObject(i);
-                                    Log.i("IMAGEurl",movementObj.getString(PingTai_Config.KEY_IMAGEURL));
-                                    movements.add(new Movements(
-                                            movementObj.getString(PingTai_Config.KEY_MOVEMENT_ID),
-                                            movementObj.getString(PingTai_Config.KEY_PUBTITLE),
-                                            movementObj.getString(PingTai_Config.KEY_CONTENT),
-                                            movementObj.getString(PingTai_Config.KEY_PHONE_NUM),
-                                            movementObj.getJSONArray(PingTai_Config.KEY_IMAGEURL),
-                                            movementObj.getString(PingTai_Config.KEY_PUBUSER),
-                                            movementObj.getString(PingTai_Config.KEY_VIEWTIMES),
-                                            movementObj.getString(PingTai_Config.KEY_COMMENTTIMES),
-                                            movementObj.getString(PingTai_Config.KEY_CATEGORY),
-                                            movementObj.getString(PingTai_Config.KEY_PUBTIME),
-//                                            movementObj.getString(PingTai_Config.KEY_GROUPURLS),
-                                               movementObj.getInt(PingTai_Config.KEY_LIKETIMES)));
-                                }
+                                Log.d(TAG,"movementJSONArray:"+movementJSONArray);
+                                List<Movements> movements = resultGson.fromJson(movementJSONArray.toString(),new TypeToken<List<Movements>>(){}.getType());
+                                Log.d(TAG,"MovementsList_Size:"+movements.size());
+                                Log.d(TAG,"MovementsList:"+movements);
+//
+//                                for (int i = 0;i < result_json.getInt(PingTai_Config.KEY_PERPAGE);i++){
+//                                    JSONObject movementObj = movementJSONArray.getJSONObject(i);
+//                                    Log.i("IMAGEurl",movementObj.getString(PingTai_Config.KEY_IMAGEURL));
+//                                    movements.add(new Movements(
+//                                            movementObj.getString(PingTai_Config.KEY_MOVEMENT_ID),
+//                                            movementObj.getString(PingTai_Config.KEY_PUBTITLE),
+//                                            movementObj.getString(PingTai_Config.KEY_CONTENT),
+//                                            movementObj.getString(PingTai_Config.KEY_PHONE_NUM),
+//                                            movementObj.getJSONArray(PingTai_Config.KEY_IMAGEURL),
+//                                            movementObj.getString(PingTai_Config.KEY_PUBUSER),
+//                                            movementObj.getString(PingTai_Config.KEY_VIEWTIMES),
+//                                            movementObj.getString(PingTai_Config.KEY_COMMENTTIMES),
+//                                            movementObj.getString(PingTai_Config.KEY_CATEGORY),
+//                                            movementObj.getString(PingTai_Config.KEY_PUBTIME),
+////                                            movementObj.getString(PingTai_Config.KEY_GROUPURLS),
+//                                               movementObj.getInt(PingTai_Config.KEY_LIKETIMES)));
+//                                }
 
                                 successCallback.onSuccess(result_json.getInt(PingTai_Config.KEY_PAGE),result_json.getInt(PingTai_Config.KEY_PERPAGE),movements);
                             }
@@ -79,9 +86,10 @@ public class Movement {
                 failCallback.onFail();
             }
         },
-                PingTai_Config.KEY_MOVEMENT,
-                PingTai_Config.KEY_CATEGORY,
-                typeOfMovement
+                PingTai_Config.KEY_ACTION
+                ,typeOfMovement
+                ,PingTai_Config.KEY_CATEGORY
+                ,typeOfMovement
                 ,PingTai_Config.KEY_PHONE_NUM,phoneNum
                 ,PingTai_Config.KEY_TOKEN,token
                 ,PingTai_Config.KEY_PAGE,page+""

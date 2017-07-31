@@ -2,6 +2,9 @@ package com.example.administrator.quantaproject.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Environment;
+
+import java.io.File;
 
 /**
  * Created by Administrator on 2017/4/16.
@@ -9,13 +12,15 @@ import android.content.SharedPreferences;
 
 public class PingTai_Config {
 
-    public static final String SERVER_URL = "http://121.42.171.181/quanta/gadilan/index.php/home/user";
-    public static final String SERVER_URL_LOCAL = "http://192.168.165.86:8080/testProject/NewFile.jsp";
+    public static final String SERVER_URL = "http://192.168.165.78:8080/testProject/NewFile.jsp";
+    public static final String SERVER_URL_LOCAL = "http://192.168.165.78:8080/testProject/NewFile.jsp";
     public static final String SERVER_URL_LOCAL_IMAGE = "http://192.168.165.86:8080/testProject/image/";
     public static final String SERVER_URL_UPLOAD = "http://192.168.165.83/gadilan/home/movement";
     public static final String APP_ID="com.example.administrator.pingtai";
     public static final String CHARSET = "UTF-8";
 
+    //拍照临时存放地址
+    public static final String MY_TEMPPHOTO_PATH =Environment.getExternalStorageDirectory() + File.separator ;
 
     public static final String ACTION_GET_CODE = "get_code";
     public static final String ACTION_LOGIN = "login";
@@ -23,11 +28,11 @@ public class PingTai_Config {
     public static final String ACTION_GETPAGEVIEWCONTENT = "getPageViewContent";
     public static final String ACTION_SIGNUP = "signup";
     public static final String ACTION_UPLOADINFO = "uploadinfo";
-    public static final String ACTION_MOVEMENT_HOT = "Normal";
+    public static final String ACTION_MOVEMENT_HOT = "movement_hot";
     public static final String ACTION_MOVEMENT_FOOD = "Food";
-    public static final String ACTION_MOVEMENT_PROGRAM = "Program";
-    public static final String ACTION_MOVEMENT_CHAOZHOU = "Chaozhou";
-    public static final String ACTION_MOVEMENT_HEADLINE = "Chaozhou";
+    public static final String ACTION_MOVEMENT_PROGRAM = "movement_program";
+    public static final String ACTION_MOVEMENT_CHAOZHOU = "movement_chaozhou";
+    public static final String ACTION_MOVEMENT_HEADLINE = "movement_headline";
     public static final String ACTION_PUBLISH = "publish";
     public static final String ACTION_FOLLOW = "follow";
     public static final String ACTION_MYMESSAGE = "myMessage";
@@ -80,13 +85,19 @@ public class PingTai_Config {
     public static final String KEY_MYGROUPS_NAME = "myGroupsName";
     public static final String KEY_COMMENT_MOVEMENTID = "commentMovementId";
     public static final String KEY_COMMENT_CONTENT = "commentContent";
+    public static final String KEY_USERINTEGRAL = "userIntegral";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;
     public static final int RESULT_STATUS_INVALID_TOKEN = 2;
 
     public static final int ACTIVITY_RESULT_NEED_REFRESH = 10000;
+    public static final int ACTIVITY_RESULT_FINISH = 10001;
+    public static final int ACTIVITY_RESULT_SUCCESS = 10005;
 
+    public static final int REQUEST_CODE_ASK_FOR_CROP = 10002;
+    public static final int REQUEST_CODE_ASK_FOR_PIC_FROM_SDCARD = 10003;
+    public static final int REQUEST_CODE_ASK_FOR_PIC_FROM_CAMERA = 10004;
 
 
     public static String getCachedToken(Context context){

@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public class GetCode {
     public GetCode(String phoneNum, final SuccessCallback successCallback, final FailCallback failCallback){
 
-        NetConnection netConnection = new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.GET, new NetConnection.SuccessCallback() {
+        NetConnection netConnection = new NetConnection(PingTai_Config.SERVER_URL, HttpMethod.POST, new NetConnection.SuccessCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -44,7 +44,7 @@ public class GetCode {
                     failCallback.onFail();
                 }
             }
-        },PingTai_Config.KEY_PHONE_NUM,phoneNum);
+        },PingTai_Config.KEY_ACTION,PingTai_Config.ACTION_GET_CODE,PingTai_Config.KEY_PHONE_NUM,phoneNum);
 
     }
 

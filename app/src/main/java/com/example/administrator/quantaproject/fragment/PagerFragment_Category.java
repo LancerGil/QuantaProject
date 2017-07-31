@@ -69,6 +69,9 @@ public class PagerFragment_Category extends Fragment {
         });
 
         category_list.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
+
+
+
         category_list.setAdapter(adapter_category);
 
         return page_Category;

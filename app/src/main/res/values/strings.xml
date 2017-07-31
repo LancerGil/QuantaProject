@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GaGiNang</string>
+    <string name="app_name">app</string>
     <string name="Login_Title">Welcome To GAGINANG</string>
     <string name="Login_TitleBar">登录</string>
     <string name="Login_NoAccount">还木有账号?</string>
@@ -54,6 +54,13 @@
     <string name="categoryname_food">美食</string>
     <string name="categoryname_raiders">新生攻略</string>
 
+    <string-array name="Movement_label">
+        <item>首页</item>
+        <item>美食</item>
+        <item>活动</item>
+        <item>我的</item>
+    </string-array>
+
     <string-array name="Movement_Home_label">
         <item>热门</item>
         <item>潮州</item>
@@ -90,14 +97,21 @@
     </string-array>
 
     <string-array name="option_mine">
-    <item>个人资料</item>
-    <item>我的消息</item>
-    <item>我的群</item>
-    <item>我的关注</item>
-    <item>我的收藏</item>
-    <item>设置</item>
-    <item>反馈</item>
-</string-array>
+        <item>个人资料</item>
+        <item>我的消息</item>
+        <item>我的群</item>
+        <item>我的关注</item>
+        <item>我的收藏</item>
+        <item>设置</item>
+        <item>反馈</item>
+        <item>退出登录</item>
+    </string-array>
+
+    <string-array name="option_message">
+        <item>标为未读</item>
+        <item>置顶</item>
+        <item>删除该聊天</item>
+    </string-array>
 
     <string-array name="all_category">
         <item>选择帖子类型</item>
@@ -117,4 +131,11 @@
     <string name="cant_insert_to_not_content">不可以在正文以外的地方添加图片哦</string>
     <string name="TAG_movement">movement</string>
     <string name="TAG_position">position</string>
+    <string name="post_detail_title">详情</string>
+    <string name="setHead">设置头像</string>
+    <string name="setting">正在设置…</string>
+    <string name="fail_to_get_personalInfo">加载个人信息失败，请稍后再试吧</string>
+    <string name="mis_error_image_not_exist">图片不存在</string>
+    <string name="mis_msg_no_camera">没有可用相机</string>
+    <string name="crop_and_move">裁剪和移动</string>
 </resources>

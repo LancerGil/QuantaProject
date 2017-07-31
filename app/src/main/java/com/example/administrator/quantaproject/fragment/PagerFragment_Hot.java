@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -29,8 +28,6 @@ import com.example.administrator.quantaproject.net.Movement;
 import com.example.administrator.quantaproject.tools.Adapter_ListMovement;
 import com.example.administrator.quantaproject.tools.PreferencesUtility;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +43,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
 
     private List<Movements> data = new ArrayList<>();
     private String phoneNum;
-    private LinearLayoutManager mGridLayoutManager;
+    private LinearLayoutManager mLinearLayoutManager;
     private Adapter_ListMovement adapterAtyMovement;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
@@ -78,21 +75,17 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
             @Override
             public void onItemClick(View view, int position) {
                 Intent seeDetail = new Intent(getActivity(), PostDetailActivity.class);
-                seeDetail.putExtra(PingTai_Config.KEY_PUBTITLE,((Movements)view.getTag(R.string.TAG_movement)).getTitle());
+                seeDetail.putExtra(PingTai_Config.KEY_PUBTITLE,((Movements)view.getTag(R.string.TAG_movement)).getPubTitle());
                 seeDetail.putExtra(PingTai_Config.KEY_PUBUSER,((Movements)view.getTag(R.string.TAG_movement)).getpubUser());
                 seeDetail.putExtra(PingTai_Config.KEY_PUBTIME,((Movements)view.getTag(R.string.TAG_movement)).getPubTime());
                 seeDetail.putExtra(PingTai_Config.KEY_CATEGORY,((Movements)view.getTag(R.string.TAG_movement)).getCategory());
                 seeDetail.putExtra(PingTai_Config.KEY_PUBCONTENT,((Movements)view.getTag(R.string.TAG_movement)).getContent());
-                Log.e("IMAGEURL",String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrls()));
+                Log.e("IMAGEURL",String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrl()));
 
                 ArrayList<String> imageStrs = new ArrayList<>();
-                for (int i = 0 ; i <((Movements)view.getTag(R.string.TAG_movement)).getImageUrls().length();i++){
-                    try {
-                        Log.i("Image:"+i+"",String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrls().get(i)));
-                        imageStrs.add(String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrls().get(i)));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                for (int i = 0; i <((Movements)view.getTag(R.string.TAG_movement)).getImageUrl().size(); i++){
+                    Log.i("Image:"+i+"",String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrl().get(i)));
+                    imageStrs.add(String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrl().get(i)));
                 }
                 seeDetail.putExtra(PingTai_Config.KEY_IMAGEURL, imageStrs);
 //                seeDetail.putExtra(PingTai_Config.KEY_GROUPURLS,((Movements)view.getTag(R.string.TAG_movement)).getGroupUrls());
@@ -149,7 +142,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
             }
         };
         loadHeadline();
-        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Default);
         mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mDemoSlider.setCustomAnimation(new DescriptionAnimation());
         mDemoSlider.setDuration(4000);
@@ -159,13 +152,12 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
         Log.i("loadMovement","start");
         loadMovement();
 
-
         recyclerView = (RecyclerView) movement_list.findViewById(R.id.rv_movement);
-        mGridLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(mGridLayoutManager);
+        mLinearLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(mLinearLayoutManager);
         recyclerView.setAdapter(adapterAtyMovement);
         recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+//        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
 
         post_layout.removeAllViews();
         mViewHashMap = new HashMap<>();
@@ -212,6 +204,7 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
         loadMovement();
         recyclerView.setAdapter(adapterAtyMovement);
 //        testCircleIndicator();
+        mDemoSlider.removeAllSliders();
         loadHeadline();
         new Handler().postDelayed(new Runnable() {
 
@@ -256,14 +249,11 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
                 data.addAll(movements);
                 Log.e("Data:","get");
                         for (int i = 0; i< 3; i++){
-                            try {
-//                                pageViews.add(new Page(data.get(i).getMovementID(),data.get(i).getImageUrls().get(0)));
-                                Log.e("imageheadurl",data.get(i).getImageUrls().get(0)+"");
-                                url_maps.put(data.get(i).getTitle(),(String) data.get(i).getImageUrls().get(0));
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            Log.e("PageViews_ADD", data.get(i).getMovementID());
+                            //                                pageViews.add(new Page(data.get(i).getMovementId(),data.get(i).getImageUrl().get(0)));
+                            Log.e("imageheadurl",data.get(i).getImageUrl().get(0)+"");
+                            url_maps.put(data.get(i).getPubTitle(),(String) data.get(i).getImageUrl().get(0));
+                            //                            Log.e("PageViews_ADD", data.get(i).getMovementId());
+//                            Log.e("PageViews_Count", url_maps.size()+"");
                         }
                 for(String name : url_maps.keySet()){
                     TextSliderView textSliderView = new TextSliderView(getActivity());
@@ -278,14 +268,8 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
                     textSliderView.bundle(new Bundle());
                     textSliderView.getBundle()
                             .putString("extra",name);
-
                     mDemoSlider.addSlider(textSliderView);
                 }
-//                        Message msg = new Message();
-//                        msg.obj = url_maps;
-//                        headlineHandler.sendMessage(msg);
-//                mDefaultIndicator.notifyDataChange(pageViews);
-//                mDefaultIndicator.setCurrentItem(0);
             }
         }, new Movement.FailCallback() {
             @Override
@@ -312,7 +296,6 @@ public class PagerFragment_Hot extends Fragment implements SwipeRefreshLayout.On
 
     @Override
     public void onPageSelected(int position) {
-
     }
 
     @Override

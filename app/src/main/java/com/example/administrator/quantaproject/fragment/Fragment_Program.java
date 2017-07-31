@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -63,12 +62,12 @@ public class Fragment_Program extends Fragment implements SwipeRefreshLayout.OnR
             @Override
             public void onItemClick(View view, int position) {
                 Intent seeDetail = new Intent(getActivity(),PostDetailActivity.class);
-                seeDetail.putExtra(PingTai_Config.KEY_PUBTITLE,((Movements)view.getTag(R.string.TAG_movement)).getTitle());
+                seeDetail.putExtra(PingTai_Config.KEY_PUBTITLE,((Movements)view.getTag(R.string.TAG_movement)).getPubTitle());
                 seeDetail.putExtra(PingTai_Config.KEY_PUBUSER,((Movements)view.getTag(R.string.TAG_movement)).getpubUser());
                 seeDetail.putExtra(PingTai_Config.KEY_PUBTIME,((Movements)view.getTag(R.string.TAG_movement)).getPubTime());
                 seeDetail.putExtra(PingTai_Config.KEY_CATEGORY,((Movements)view.getTag(R.string.TAG_movement)).getCategory());
                 seeDetail.putExtra(PingTai_Config.KEY_IMAGEURL,((Movements)view.getTag(R.string.TAG_movement)).getContent());
-                seeDetail.putExtra(PingTai_Config.KEY_PUBCONTENT, String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrls()));
+                seeDetail.putExtra(PingTai_Config.KEY_PUBCONTENT, String.valueOf(((Movements)view.getTag(R.string.TAG_movement)).getImageUrl()));
                 seeDetail.putExtra(PingTai_Config.KEY_GROUPURLS,((Movements)view.getTag(R.string.TAG_movement)).getGroupUrls());
                 seeDetail.putExtra(PingTai_Config.KEY_LIKETIMES,((Movements)view.getTag(R.string.TAG_movement)).getLikeTimes());
                 seeDetail.putExtra(PingTai_Config.KEY_VIEWTIMES,((Movements)view.getTag(R.string.TAG_movement)).getViewTimes());
@@ -79,7 +78,6 @@ public class Fragment_Program extends Fragment implements SwipeRefreshLayout.OnR
 
         program_list.setLayoutManager(new LinearLayoutManager(getActivity()));
         program_list.setAdapter(adapter_program);
-        program_list.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
 
         return programView;
     }

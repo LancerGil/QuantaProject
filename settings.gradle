@@ -1,1 +1,1 @@
-include ':app', ':infiniteIndicator', ':materialviewpager', ':library'
+include ':app', ':infiniteIndicator', ':library'
